@@ -1,0 +1,16 @@
+KORTKLUBB V5 — SOCIAL EDITION
+
+SOLO: Åpne index.html direkte i nettleseren. Poker har Lett, Normal og Vanskelig AI. Blackjack bruker en dealer med faste regler.
+
+ONLINE:
+1. Pakk ut ZIP-filen. Installer Node.js 18 eller nyere hvis du ikke har det (https://nodejs.org/).
+2. Åpne Terminal i mappen. Skriv npm start (ingen npm install nødvendig).
+3. Åpne http://localhost:3000 og velg Online. Opprett rom, velg spill, skriv kallenavn.
+4. Kopier invitasjonslenken. På samme maskin kan du teste med et privat nettleservindu. På samme lokale nettverk kan du bruke maskinens lokale adresse og port 3000 dersom nettverket tillater det.
+5. For venner på andre nettverk må serveren være publisert på en Node.js-kompatibel vert med HTTPS. Last opp hele mappen, sett startkommando til npm start, og åpne vertens offentlige HTTPS-adresse. Opprett rom på den adressen, ikke localhost. En vanlig statisk HTML-vert (for eksempel Netlify Drop) kjører ikke denne serveren. Hosting er ikke utført eller inkludert. Kostnader avhenger av verten.
+
+Rom: 2–10 personer totalt. Vert starter hender. Nye spillere kan joine mellom hender. Poker har sidepotter og skjulte kort. Online blackjack har felles dealer, innsats, hit, stand og double; splitt finnes kun i solo. Botnivåer gjelder solo poker, ikke dealer eller online. Rom, chat og saldo ligger i minnet og forsvinner ved restart eller seks timer uten aktivitet. Ingen kontoer, ekte penger eller premier. Del lenker privat: alle som har romlenken kan joine. Chat har ingen automatisk moderering. Ingen automatisk frakoblingshåndtering: en spiller som forlater under sin tur kan stoppe hånden. Bruk bare på nettverk der spill er tillatt.
+
+TEST: npm test. Testene dekker serverens rom, chat, private kort, spillflyt og sjetonger. Online er en prototype, ikke en ferdig offentlig tjeneste.
+
+V5.1: Vanskelig AI vurderer mulige fremtidige kort og motstanderhender basert på egne kort og felleskort, samt forholdet mellom syning og potten. Lett/Normal og online er uendret.
