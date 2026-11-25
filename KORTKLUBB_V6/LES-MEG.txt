@@ -1,0 +1,17 @@
+KORTKLUBB V6 – WORLD EDITION
+Kun virtuelle sjetonger og JanCoin uten pengeverdi. Ingen innskudd, kjøp med penger, uttak av penger eller premier. Bruk kun på nettverk der det er tillatt.
+
+OPPDATER RENDER FRA V5.1
+1. Pakk ut ZIP-filen. Åpne det eksisterende GitHub-prosjektet, og åpne mappen KORTKLUBB_V5_1 (Root Directory i Render). Last opp INNHOLDET fra V6-zip i denne mappen, ikke en ny V6-undermappe. Godkjenn overskriving av eksisterende filer. Behold gifs/-mappen med alle GIF-ene. Ikke last opp data/ med kontoer.
+2. Commit changes. Render vil normalt bygge automatisk fra main. Hvis ikke: Manual Deploy > Deploy latest commit. Behold eksisterende Root Directory og startkommando (npm start / yarn start). Node 18+.
+3. Åpne den eksisterende onrender.com-adressen. Online krever konto. Eksisterende V5-rom og sjetonger overføres ikke.
+
+LOKALT: npm start, deretter http://localhost:3000. npm test tester server, bot og V6. Ingen ekstra pakker.
+
+LAGRING: kontoer, hash av passord, økter, avatarer, JanCoin og rank lagres i data/profiles.json. På Render Free er filsystemet midlertidig: dette kan slettes ved restart, redeploy eller dvale. For varig lagring må du konfigurere en vedvarende disk (vanligvis betalt hosting), og sette KK_DATA_FILE=/var/data/profiles.json dersom disken er montert i /var/data. Bruk kun én serverinstans; JSON-lagring er ikke en flerinstansdatabase. Ingen e-post eller passordgjenoppretting; velg unikt passord, ikke et du bruker andre steder. Dette er en prototype uten full sikkerhetsrevisjon. Ikke legg data/profiles.json på GitHub. Rom og chat ligger i minnet og kan forsvinne.
+
+MAPS: Classic Club, Midnight Lounge, Arctic Lodge, Desert Room, Neon City. Visuelle temaer, lagret i nettleseren. Gjelder solo og online.
+GIF: seks innebygde reaksjoner, ikke GIF-søk eller opplasting. Enkel ordlistefilter i chat; ikke full moderering.
+JANCOIN: 10 ved registrering. I private rom, 100 sjetonger over 1000 = 1 JanCoin, bare mellom hender. 10 JanCoin = 1000 øvingssjetonger ved tom saldo; gratis nytt forsøk gir 500. Ingen realverdi. Ranked har separat saldo og gratis påfyll. Økonomien er en prototype og kan manipuleres via samarbeid; ingen premier eller pengeverdier.
+RANKED: åpen matchmaking for poker, 2–10 personer, vert starter. +8 poeng for positivt sjetongresultat, -4 for negativt, 0 ved uavgjort. Starter på 1000, ikke Elo, ingen anti-collusion, ingen nivåbasert matching. Private rom teller ikke. Ingen automatiske tidsfrister; frakobling midt i hånd kan stoppe den.
+Profiler finnes bare i online, solo er lokal.

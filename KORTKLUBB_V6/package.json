@@ -1,0 +1,12 @@
+{
+  "name": "kortklubb-v6",
+  "version": "6.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js && node test-bot.js && node test-v6.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
