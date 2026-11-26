@@ -1,0 +1,13 @@
+ROYALDECK V7 – SOCIAL PROFILE EDITION
+
+Oppdatering fra Kortklubb V6. Krever Node.js 18 eller nyere.
+Lokalt: npm start, åpne http://localhost:3000.
+Test: npm test.
+
+Render: Pakk ut KORTKLUBB_V7.zip. Last opp mappen KORTKLUBB_V7 til eksisterende GitHub-repo. Kontroller at package.json og server.js ligger direkte inni mappen. På den eksisterende Render-tjenesten endrer du Root Directory til KORTKLUBB_V7, beholder Node, npm install og npm start. Publiser siste commit hvis nødvendig. Samme nettadresse.
+
+Nytt: opplasting av profilbilde (160 x 160 JPEG fra nettleseren), fjerning av bilde, åtte bannerfarger, rankmerker i spillerbord, chat og toppliste. 1100 Bronze, 1200 Silver, 1300 Gold, 1400 Diamond, 1500 Royal. Under 1100: Unranked. Fremgangsvisning, seire og vinnprosent, lokal chatdemping og skjul chat. Tidligere virtuelle spillfunksjoner, temaer og GIF-er beholdt. Ingen pengeverdi eller pengepremier.
+
+Profiler lagres i data/profiles.json (eller KK_DATA_FILE). På Render Free kan data slettes ved omstart eller deploy. Ikke last opp brukerdata til GitHub; .gitignore utelater data/. Permanent lagring krever separat vedvarende lagring. Ta vare på data privat før oppgradering hvis du har tilgang. Profilbilder vises til andre spillere og kan hentes av personer som har bilde-URL. Bruk bare bilder som du har rett til å dele; unngå personlige bilder. Ingen automatisk bildemoderering eller komplett sikkerhetsrevisjon. Bruk unike passord, ikke passord fra andre tjenester.
+
+Server- og API-tester bestod. Full nettlesertest kunne ikke gjennomføres fordi testmiljøet blokkerte lokal nettadresse. Test på en tillatt nettforbindelse etter publisering.
