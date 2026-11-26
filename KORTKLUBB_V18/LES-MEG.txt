@@ -1,0 +1,6 @@
+RoyalDeck V18 – 3D World
+
+Ekte WebGL-geometri i online-rom, med justerbart kamera og 2.5D-reservevisning. Karakterer er stiliserte modeller, ikke fotorealistiske. Solo er fortsatt 2.5D. Virtuelle sjetonger uten pengeverdi.
+
+Render Root Directory: KORTKLUBB_V18. npm install / npm start.
+Kontoer kan gå tapt på gratisserver uten permanent lagring.
