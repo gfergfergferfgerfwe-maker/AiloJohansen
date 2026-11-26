@@ -1,0 +1,5 @@
+RoyalDeck V10 – Casino Edition
+
+Oppdatert for et mer ekte casinoutseende: dypere filt, bedre kort, sterkere skygger, mer premium paneler og oppgradert online-bord.
+
+Render root directory: KORTKLUBB_V10
