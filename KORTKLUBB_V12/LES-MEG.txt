@@ -1,0 +1,6 @@
+RoyalDeck V12 – Table Edition
+Online: egen plass nederst, spillere rundt et ovalt bord, elleve illustrerte rom med perspektiv og separat bordlag. CSS/2.5D, ikke WebGL. På smale skjermer kan bordet rulles sidelengs. Ingen endringer i spillreglene.
+Render Root Directory: KORTKLUBB_V12
+Start lokalt: npm start
+Test: npm test
+Kontoer kan forsvinne ved ny deploy uten varig disk/database.

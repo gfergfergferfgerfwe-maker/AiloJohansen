@@ -1,0 +1,12 @@
+{
+  "name": "royaldeck-v12",
+  "version": "12.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js && node test-bot.js && node test-v6.js && node test-v7.js && node test-v8.js && node test-v9.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
