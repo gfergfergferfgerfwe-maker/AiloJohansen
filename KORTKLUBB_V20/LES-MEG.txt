@@ -1,0 +1,10 @@
+RoyalDeck V20 – Fair Shuffle
+
+Oppdatering: ranked +25/-8 RP, 12 valgbare karakterer, separate garderobeplasser, 22 kosmetiske gjenstander, modellerte klær og bordtilbehør, større profilbilder og bildechat. Alt bruker fiktive poeng uten pengeverdi. Online 3D er stilisert; solo og reservevisning er 2.5D. Illustrerte valgkort er ikke eksakte 3D-forhåndsvisninger.
+
+Bildechat: JPG/PNG/WebP konverteres til JPEG på klienten, maks 960x960 og 115 kB etter komprimering. Bilder åpnes manuelt av mottaker, krever medlemskap i rommet og lagres midlertidig i minnet i opptil én time (kan bli fjernet før). Ikke del private eller uautoriserte bilder. Ingen automatisk bildemoderering.
+
+Render Root Directory: KORTKLUBB_V20. npm install / npm start.
+Kontoer, klær og rank kan gå tapt på gratisserver uten permanent lagring. npm test kjører automatiske tester.
+
+V20: server og solo bruker kryptografisk tilfeldighetskilde; online all-in bruker samme brennkortregler som vanlig utdeling. Ingen kunstig reduksjon av straight.
