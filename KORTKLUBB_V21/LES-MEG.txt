@@ -1,0 +1,64 @@
+ROYALDECK V21 – PERSISTENT WORLD
+================================
+
+Alt er fiktive sjetonger og poeng uten pengeverdi. Ingen innskudd eller uttak av ekte penger.
+
+START LOKALT
+Node.js 18+ (nyere LTS anbefales), npm start. Åpne http://localhost:3000.
+npm test kjører spill-, konto-, kortstokking-, turfrist- og databasetester.
+
+OPPDATER RENDER
+Pakk ut ZIP-filen. Last opp hele KORTKLUBB_V21-mappen til GitHub (uten mellomrom eller parenteser).
+På Render: RoyalDeck1 > Settings > Build > Root Directory = KORTKLUBB_V21.
+Build Command: npm install eller yarn. Start Command: npm start eller yarn start.
+Du beholder eksisterende nettadresse. Ikke slett den gamle tjenesten før du har testet oppdateringen.
+
+VARIG LAGRING (VIKTIG)
+Render Free har et midlertidig filsystem som kan bli nullstilt ved hvile, restart og deploy.
+V21 støtter en ekstern Supabase Postgres-database via REST API. Dette krever at du selv
+oppretter og kobler til et databaseprosjekt. Pakken oppretter ikke et eksternt prosjekt.
+
+1. Opprett et eget privat prosjekt på https://supabase.com/dashboard (sjekk priser, vilkår og alderskrav).
+2. Åpne SQL Editor, kopier hele database.sql inn og kjør SQL-spørringen. Tabellen heter royaldeck_state.
+3. Finn Project URL (https://<prosjekt>.supabase.co) og en server-side secret API key
+   (sb_secret_...; eldre service_role-nøkkel støttes også). Ikke bruk publishable/anon-nøkkel.
+4. På Render, åpne RoyalDeck1 > Environment. Legg til:
+      RD_DATABASE_URL = prosjektadressen
+      RD_DATABASE_KEY = serverens hemmelige nøkkel
+   ALDRI lim nøkkelen inn i GitHub, HTML, chat eller skjermbilder.
+5. Lagre og deploy. V21 skal logge 'storage: database' ved oppstart. I lobbyen står Database aktiv.
+6. Test: lag en ny testkonto, endre et kosmetisk valg, logg ut, restart tjenesten, logg inn og kontroller.
+   Ikke fjern eksisterende data eller bruk to serverinstanser mot samme database.
+
+Alternativ med betalt Render-tjeneste: monter en vedvarende disk og sett KK_DATA_FILE til
+f.eks. /var/data/profiles.json. Kontroller at filen faktisk ligger på disken. En vanlig filbane
+på gratisserveren er IKKE varig lagring.
+
+LAGRES: brukernavn, saltede passordhasher, sessions, profilbilde, rank, statistikk, virtuelle
+JanCoins, garderobe, tilbehør og quizstatus. Eksisterende kontoer fra tidligere deployer
+kan ikke automatisk gjenopprettes hvis den gamle serverfilen er borte. Dersom en tidligere
+privat profiles.json finnes, kan den brukes som KK_DATA_FILE ved FØRSTE oppstart mot en tom
+database; aldri publiser den i GitHub. En eksisterende databaserad har forrang.
+Spillrom, pågående hender, romsaldo, chat og delte bilder er fortsatt midlertidige.
+Databaseoppsettet er en enkel prototype (en JSON-rad for hele kontodatabasen), beregnet
+for én serverinstans, ikke mange parallelle servere. Ved databasefeil blokkeres nye
+konto-/spilloperasjoner til utestående lagring kan fullføres. En mislykket forespørsel
+kan ha blitt lagret senere ved ny forsøk; oppdater profilen før du gjentar handlingen.
+Ta jevnlig private sikkerhetskopier. Ingen automatisk sikkerhetsrevisjon er utført.
+
+TURFRIST
+30 sekunder per trekk i poker, og per aktiv blackjack-beslutning. Online bruker serverens
+klokke. Når fristen utløper: check hvis mulig, ellers fold i poker; stå over hvis du ikke har
+valgt innsats i blackjack, ellers stå. Solo bruker nettleserens klokke. Ingen automatisk
+innsats legges inn ved timeout. Ranked beholder +25/-8. En ny gyldig handling starter ny frist.
+
+GRAFIKK
+Videreutviklet WebGL/CPU 3D-motor, nye romdetaljer, materiallys, teppe, borddetaljer,
+større profilbilder, fullskjerm og redusert unødvendig rerendering. 18 tidligere maps beholdt.
+2D-reserve finnes fortsatt. 3D-modellene er stiliserte, ikke fotorealistiske.
+
+TESTSTATUS
+npm test bestått, inkl. 30 000 server- og 3 000 solo-kortutdelinger, simulert timeout,
+filbasert gjenoppstart og en simulert Supabase REST-tjeneste. Chromium-layout med
+servergenererte testdata fungerer i programvarerendering. Full nettleser-til-server-test
+og maskinvare-WebGL ble blokkert av testmiljøet. En ekte ekstern database er ikke testet.
